@@ -76,7 +76,7 @@
             align-items: center; /* Fixiert die Ausrichtung oben */
             font-family: 'font';
             color: mintcream;
-            font-size: 5px;
+            font-size: 12px;
             margin: 10px;
             height: auto;
             flex-direction: column;
@@ -151,14 +151,14 @@
             padding: 0;
         }
 
-        main li {
+        li {
             background: rgba(4, 4, 30, 100);
             margin: 10px 0;
             padding: 20px;
             border-radius: 8px;
             cursor: pointer;
             transition: background 0.3s;
-            font-size: 5px;
+            font-size: 10px;
         }
 
             li:hover {
@@ -406,7 +406,7 @@
             align-items: center; /* Fixiert die Ausrichtung oben */
             font-family: 'font';
             color: mintcream;
-            font-size: 8px;
+            font-size: 12px;
             margin: 10px;
             height: auto;
             flex-direction: column;
@@ -507,14 +507,14 @@
             padding: 0;
         }
 
-        main li {
+        li {
             background: rgba(4, 4, 30, 100);
             margin: 10px 0;
             padding: 30px;
             border-radius: 8px;
             cursor: pointer;
             transition: background 0.3s;
-            font-size: 10px;
+            font-size: 20px;
         }
 
             li:hover {
@@ -678,7 +678,7 @@
             width: 100%;
             height: auto;
             background-color: rgba(4, 4, 30, 100);
-            font-size: 5px;
+            font-size: 15px;
             display: flex;
             z-index: 100;
         }
@@ -716,7 +716,7 @@
             align-items: center; /* Fixiert die Ausrichtung oben */
             font-family: 'font';
             color: mintcream;
-            font-size: 15px;
+            font-size: 30px;
             margin: 10px;
             height: auto;
             flex-direction: column;
@@ -813,14 +813,14 @@
             padding: 0;
         }
 
-        main li {
+        li {
             background: rgba(4, 4, 30, 100);
             margin: 10px 0;
             padding: 45px;
             border-radius: 8px;
             cursor: pointer;
             transition: background 0.3s;
-            font-size: 15px;
+            font-size: 30px;
         }
 
             li:hover {
@@ -982,7 +982,7 @@
             width: 100%;
             height: auto;
             background-color: rgba(4, 4, 30, 100);
-            font-size: 10px;
+            font-size: 25px;
             z-index: 100;
         }
         .correct {
@@ -999,179 +999,180 @@
 </style>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".picture img").forEach(img => {
-        img.addEventListener("click", function () {
-            let url = this.getAttribute("data-link");
-            if (url) {
-                window.location.href = url; // Seite wechseln
-            }
+        document.querySelectorAll(".picture img").forEach(img => {
+            img.addEventListener("click", function () {
+                let url = this.getAttribute("data-link");
+                if (url) {
+                    window.location.href = url; // Seite wechseln
+                }
+            });
         });
     });
-});
-function openSidebar() {
-    document.getElementById('navbar').classList.add('show');
-    document.getElementById('overlay').style.display = 'block';
-}
-function closeSidebar() {
-    document.getElementById('navbar').classList.remove('show');
-    document.getElementById('overlay').style.display = 'none';
-}
-
-const questions = [
-    {
-        question: "Wie sieht ein Judenhut aus?",
-        answers: [
-            { text: "Er ist rund.", correct: false },
-            { text: "Er ist spitz.", correct: true },
-            { text: "Er ist quadratisch.", correct: false },
-        ]
-    },
-    {
-        question: "Was hat den Judenhut von 1451 bis 1780 abgelöst?",
-        answers: [
-            { text: "Der gelbe Stein", correct: false },
-            { text: "Der gelbe Stern", correct: false },
-            { text: "Der gelbe Ring", correct: true },
-        ]
-    },
-    {
-        question: "Warum wurden Juden Geldverleiher?",
-        answers: [
-            { text: "Weil sie geldgierig sind.", correct: false },
-            { text: "Weil Juden nicht wollten, dass Christen diesen Beruf ausführen.", correct: false },
-            { text: "Weil Christen aufgrund ihres Glaubenssatzes diesen Beruf nicht ausführen konnten.", correct: true },
-        ]
-    },
-    {
-        question: "Inwiefern ist die Judensau antisemitsch?",
-        answers: [
-            { text: "Juden werden als Schweinebelästiger dargestellt.", correct: true },
-            { text: "Juden werden als Schweine dargestellt, welches für sie <<unreine Tiere>> sind.", correct: false },
-            { text: "Juden werden als Freunde von Schweinen dargestellt.", correct: false },
-        ]
-    },
-    {
-        question: "Was für ein antisemitisches Merkmal ist in diesem Bild erkennbar?",
-        image: "gefangnahme_christi.jpeg",
-        answers: [
-            { text: "Ein Judenhut", correct: true },
-            { text: "Eine Judensau", correct: false },
-            { text: "Geldgierige Juden", correct: false },
-        ]
-    },
-
-    {
-        question: "Was ist an dieser Abbildung antisemitisch?",
-        image: "bart.jpg",
-        answers: [
-            { text: "Die Nase der Frau", correct: false },
-            { text: "Das Nase des Mannes", correct: true },
-            { text: "Die Ohren des Mannes", correct: false },
-        ]
-    },
-    {
-        question: "Wer ist die Frau, die mit dem Schwert durchbohrt wird?",
-        image: "synagoga.png",
-        answers: [
-            { text: "Efa", correct: false },
-            { text: "Ecclesia", correct: false },
-            { text: "Synagoga", correct: true },
-            { text: "Maria", correct: false },
-        ]
-    },
-    {
-        question: "Wer steht für das Christentum?",
-        answers: [
-            { text: "Ecclesia", correct: true },
-            { text: "Synagoga", correct: false },
-        ]
+    function openSidebar() {
+        document.getElementById('navbar').classList.add('show');
+        document.getElementById('overlay').style.display = 'block';
     }
-];
-
-let currentQuestion = 0;
-let score = 0;
-
-function showQuestion() {
-    const q = questions[currentQuestion];
-    document.getElementById("question").textContent = q.question;
-
-    // Bild zeigen, wenn vorhanden
-    const img = document.getElementById("question-image");
-    if (q.image) {
-        img.src = q.image;
-        img.style.display = "block";
-    } else {
-        img.style.display = "none";
+    function closeSidebar() {
+        document.getElementById('navbar').classList.remove('show');
+        document.getElementById('overlay').style.display = 'none';
     }
 
-    const answerList = document.getElementById("answers");
-    answerList.innerHTML = "";
-    document.getElementById("feedback").textContent = "";
-    document.getElementById("next-btn").style.display = "none";
+    const questions = [
+        {
+            question: "Wie sieht ein Judenhut aus?",
+            answers: [
+                { text: "Er ist rund.", correct: false },
+                { text: "Er ist spitz.", correct: true },
+                { text: "Er ist quadratisch.", correct: false },
+            ]
+        },
+        {
+            question: "Was hat den Judenhut von 1451 bis 1780 abgelöst?",
+            answers: [
+                { text: "Der gelbe Stein", correct: false },
+                { text: "Der gelbe Stern", correct: false },
+                { text: "Der gelbe Ring", correct: true },
+            ]
+        },
+        {
+            question: "Warum wurden Juden Geldverleiher?",
+            answers: [
+                { text: "Weil sie geldgierig sind.", correct: false },
+                { text: "Weil Juden nicht wollten, dass Christen diesen Beruf ausführen.", correct: false },
+                { text: "Weil Christen aufgrund ihres Glaubenssatzes diesen Beruf nicht ausführen konnten.", correct: true },
+            ]
+        },
+        {
+            question: "Inwiefern ist die Judensau antisemitsch?",
+            answers: [
+                { text: "Juden werden als Schweinebelästiger dargestellt.", correct: true },
+                { text: "Juden werden als Schweine dargestellt, welches für sie <<unreine Tiere>> sind.", correct: false },
+                { text: "Juden werden als Freunde von Schweinen dargestellt.", correct: false },
+            ]
+        },
+        {
+            question: "Was für ein antisemitisches Merkmal ist in diesem Bild erkennbar?",
+            image: "gefangnahme_christi.jpeg",
+            answers: [
+                { text: "Ein Judenhut", correct: true },
+                { text: "Eine Judensau", correct: false },
+                { text: "Geldgierige Juden", correct: false },
+            ]
+        },
 
-    q.answers.forEach(answer => {
-        const li = document.createElement("li");
-        li.textContent = answer.text;
-        li.onclick = () => selectAnswer(li, answer.correct);
-        answerList.appendChild(li);
-    });
-}
-
-function selectAnswer(element, isCorrect) {
-    const feedback = document.getElementById("feedback");
-    const answers = document.querySelectorAll("#answers li");
-
-    // Verhindert mehrfaches Klicken
-    if ([...answers].some(a => a.classList.contains("disabled"))) return;
-
-    answers.forEach(a => {
-        a.classList.add("disabled");
-
-        // Färbe die richtige Antwort grün
-        const isRight = questions[currentQuestion].answers.find(ans => ans.text === a.textContent)?.correct;
-        if (isRight) {
-            a.classList.add("correct");
+        {
+            question: "Was ist an dieser Abbildung antisemitisch?",
+            image: "bart.jpg",
+            answers: [
+                { text: "Die Nase der Frau", correct: false },
+                { text: "Das Nase des Mannes", correct: true },
+                { text: "Die Ohren des Mannes", correct: false },
+            ]
+        },
+        {
+            question: "Wer ist die Frau, die mit dem Schwert durchbohrt wird?",
+            image: "synagoga.png",
+            answers: [
+                { text: "Efa", correct: false },
+                { text: "Ecclesia", correct: false },
+                { text: "Synagoga", correct: true },
+                { text: "Maria", correct: false },
+            ]
+        },
+        {
+            question: "Wer steht für das Christentum?",
+            answers: [
+                { text: "Ecclesia", correct: true },
+                { text: "Synagoga", correct: false },
+            ]
         }
-    });
+    ];
 
-    // Markiere falsch gewählte Antwort rot
-    if (!isCorrect) {
-        element.classList.add("wrong");
-        feedback.textContent = "❌ Falsch!";
-        feedback.style.color = "red";
-    } else {
-        score++;
-        feedback.textContent = "✅ Richtig!";
-        feedback.style.color = "green";
+    let currentQuestion = 0;
+    let score = 0;
+
+    function showQuestion() {
+        const q = questions[currentQuestion];
+        document.getElementById("question").textContent = q.question;
+
+        // Bild zeigen, wenn vorhanden
+        const img = document.getElementById("question-image");
+        if (q.image) {
+            img.src = q.image;
+            img.style.display = "block";
+        } else {
+            img.style.display = "none";
+        }
+
+        const answerList = document.getElementById("answers");
+        answerList.innerHTML = "";
+        document.getElementById("feedback").textContent = "";
+        document.getElementById("next-btn").style.display = "none";
+
+        q.answers.forEach(answer => {
+            const li = document.createElement("li");
+            li.textContent = answer.text;
+            li.onclick = () => selectAnswer(li, answer.correct);
+            answerList.appendChild(li);
+        });
     }
 
-    document.getElementById("next-btn").style.display = "inline-block";
-}
+    function selectAnswer(element, isCorrect) {
+        const feedback = document.getElementById("feedback");
+        const answers = document.querySelectorAll("#answers li");
 
+        // Verhindert mehrfaches Klicken
+        if ([...answers].some(a => a.classList.contains("disabled"))) return;
 
-function nextQuestion() {
-    currentQuestion++;
-    if (currentQuestion < questions.length) {
-        showQuestion();
-    } else {
-        showResult();
+        answers.forEach(a => {
+            a.classList.add("disabled");
+
+            // Färbe die richtige Antwort grün
+            const isRight = questions[currentQuestion].answers.find(ans => ans.text === a.textContent)?.correct;
+            if (isRight) {
+                a.classList.add("correct");
+            }
+        });
+
+        // Markiere falsch gewählte Antwort rot
+        if (!isCorrect) {
+            element.classList.add("wrong");
+            feedback.textContent = "❌ Falsch!";
+            feedback.style.color = "red";
+        } else {
+            score++;
+            feedback.textContent = "✅ Richtig!";
+            feedback.style.color = "green";
+        }
+
+        document.getElementById("next-btn").style.display = "inline-block";
     }
-}
 
-function showResult() {
-    document.getElementById("question").style.display = "none";
-    document.getElementById("answers").style.display = "none";
-    document.getElementById("next-btn").style.display = "none";
-    document.getElementById("feedback").style.display = "none";
 
-    document.getElementById("result").textContent =
-        `Du hast ${score} von ${questions.length} Fragen richtig beantwortet.`;
+    function nextQuestion() {
+        currentQuestion++;
+        if (currentQuestion < questions.length) {
+            showQuestion();
+        } else {
+            showResult();
+        }
+    }
 
-    document.getElementById("question-image").style.display = "none";
+    function showResult() {
+        document.getElementById("question").style.display = "none";
+        document.getElementById("answers").style.display = "none";
+        document.getElementById("next-btn").style.display = "none";
+        document.getElementById("feedback").style.display = "none";
 
-}
+        document.getElementById("result").textContent =
+            `Du hast ${score} von ${questions.length} Fragen richtig beantwortet.`;
 
-showQuestion();
+        document.getElementById("question-image").style.display = "none";
+
+    }
+
+    showQuestion();
+
 
 </script>
 </html>
