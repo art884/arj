@@ -1018,160 +1018,78 @@
     }
 
     const questions = [
-        {
-            question: "Wie sieht ein Judenhut aus?",
-            answers: [
-                { text: "Er ist rund.", correct: false },
-                { text: "Er ist spitz.", correct: true },
-                { text: "Er ist quadratisch.", correct: false },
-            ]
-        },
-        {
-            question: "Was hat den Judenhut von 1451 bis 1780 abgelöst?",
-            answers: [
-                { text: "Der gelbe Stein", correct: false },
-                { text: "Der gelbe Stern", correct: false },
-                { text: "Der gelbe Ring", correct: true },
-            ]
-        },
-        {
-            question: "Warum wurden Juden Geldverleiher?",
-            answers: [
-                { text: "Weil sie geldgierig sind.", correct: false },
-                { text: "Weil Juden nicht wollten, dass Christen diesen Beruf ausführen.", correct: false },
-                { text: "Weil Christen aufgrund ihres Glaubenssatzes diesen Beruf nicht ausführen konnten.", correct: true },
-            ]
-        },
-        {
-            question: "Inwiefern ist die Judensau antisemitsch?",
-            answers: [
-                { text: "Juden werden als Schweinebelästiger dargestellt.", correct: true },
-                { text: "Juden werden als Schweine dargestellt, welches für sie <<unreine Tiere>> sind.", correct: false },
-                { text: "Juden werden als Freunde von Schweinen dargestellt.", correct: false },
-            ]
-        },
-        {
-            question: "Was für ein antisemitisches Merkmal ist in diesem Bild erkennbar?",
-            image: "gefangnahme_christi.jpeg",
-            answers: [
-                { text: "Ein Judenhut", correct: true },
-                { text: "Eine Judensau", correct: false },
-                { text: "Geldgierige Juden", correct: false },
-            ]
-        },
-
-        {
-            question: "Was ist an dieser Abbildung antisemitisch?",
-            image: "bart.jpg",
-            answers: [
-                { text: "Die Nase der Frau", correct: false },
-                { text: "Das Nase des Mannes", correct: true },
-                { text: "Die Ohren des Mannes", correct: false },
-            ]
-        },
-        {
-            question: "Wer ist die Frau, die mit dem Schwert durchbohrt wird?",
-            image: "synagoga.png",
-            answers: [
-                { text: "Efa", correct: false },
-                { text: "Ecclesia", correct: false },
-                { text: "Synagoga", correct: true },
-                { text: "Maria", correct: false },
-            ]
-        },
-        {
-            question: "Wer steht für das Christentum?",
-            answers: [
-                { text: "Ecclesia", correct: true },
-                { text: "Synagoga", correct: false },
-            ]
-        }
-    ];
-
-    let currentQuestion = 0;
-    let score = 0;
-
-    function showQuestion() {
-        const q = questions[currentQuestion];
-        document.getElementById("question").textContent = q.question;
-
-        // Bild zeigen, wenn vorhanden
-        const img = document.getElementById("question-image");
-        if (q.image) {
-            img.src = q.image;
-            img.style.display = "block";
-        } else {
-            img.style.display = "none";
-        }
-
-        const answerList = document.getElementById("answers");
-        answerList.innerHTML = "";
-        document.getElementById("feedback").textContent = "";
-        document.getElementById("next-btn").style.display = "none";
-
-        q.answers.forEach(answer => {
-            const li = document.createElement("li");
-            li.textContent = answer.text;
-            li.onclick = () => selectAnswer(li, answer.correct);
-            answerList.appendChild(li);
-        });
+    {
+        question: "Wie sieht ein Judenhut aus?",
+        answers: [
+            { text: "Er ist rund.", correct: false },
+            { text: "Er ist spitz.", correct: true },
+            { text: "Er ist quadratisch.", correct: false },
+        ]
+    },
+    {
+        question: "Was hat den Judenhut von 1451 bis 1780 abgelöst?",
+        answers: [
+            { text: "Der gelbe Stein", correct: false },
+            { text: "Der gelbe Stern", correct: false },
+            { text: "Der gelbe Ring", correct: true },
+        ]
+    },
+    {
+        question: "Warum wurden Juden Geldverleiher?",
+        answers: [
+            { text: "Weil sie geldgierig sind.", correct: false },
+            { text: "Weil Juden nicht wollten, dass Christen diesen Beruf ausführen.", correct: false },
+            { text: "Weil Christen aufgrund ihres Glaubenssatzes diesen Beruf nicht ausführen konnten.", correct: true },
+        ]
+    },
+    {
+        question: "Inwiefern ist die Judensau antisemitisch?",
+        answers: [
+            { text: "Juden werden als Schweinebelästiger dargestellt.", correct: true },
+            { text: "Juden werden als Schweine dargestellt, welches für sie <<unreine Tiere>> sind.", correct: false },
+            { text: "Juden werden als Freunde von Schweinen dargestellt.", correct: false },
+        ]
+    },
+    {
+        question: "Was für ein antisemitisches Merkmal ist in diesem Bild erkennbar?",
+        image: "gefangnahme_christi.jpeg",
+        source: "Quelle: www.example.com", // Bildquelle hier hinzufügen
+        answers: [
+            { text: "Ein Judenhut", correct: true },
+            { text: "Eine Judensau", correct: false },
+            { text: "Geldgierige Juden", correct: false },
+        ]
+    },
+    {
+        question: "Was ist an dieser Abbildung antisemitisch?",
+        image: "bart.jpg",
+        source: "Quelle: www.example.com", // Bildquelle hier hinzufügen
+        answers: [
+            { text: "Die Nase der Frau", correct: false },
+            { text: "Das Nase des Mannes", correct: true },
+            { text: "Die Ohren des Mannes", correct: false },
+        ]
+    },
+    {
+        question: "Wer ist die Frau, die mit dem Schwert durchbohrt wird?",
+        image: "synagoga.png",
+        source: "Quelle: www.example.com", // Bildquelle hier hinzufügen
+        answers: [
+            { text: "Efa", correct: false },
+            { text: "Ecclesia", correct: false },
+            { text: "Synagoga", correct: true },
+            { text: "Maria", correct: false },
+        ]
+    },
+    {
+        question: "Wer steht für das Christentum?",
+        answers: [
+            { text: "Ecclesia", correct: true },
+            { text: "Synagoga", correct: false },
+        ]
     }
+];
 
-    function selectAnswer(element, isCorrect) {
-        const feedback = document.getElementById("feedback");
-        const answers = document.querySelectorAll("#answers li");
-
-        // Verhindert mehrfaches Klicken
-        if ([...answers].some(a => a.classList.contains("disabled"))) return;
-
-        answers.forEach(a => {
-            a.classList.add("disabled");
-
-            // Färbe die richtige Antwort grün
-            const isRight = questions[currentQuestion].answers.find(ans => ans.text === a.textContent)?.correct;
-            if (isRight) {
-                a.classList.add("correct");
-            }
-        });
-
-        // Markiere falsch gewählte Antwort rot
-        if (!isCorrect) {
-            element.classList.add("wrong");
-            feedback.textContent = "❌ Falsch!";
-            feedback.style.color = "red";
-        } else {
-            score++;
-            feedback.textContent = "✅ Richtig!";
-            feedback.style.color = "green";
-        }
-
-        document.getElementById("next-btn").style.display = "inline-block";
-    }
-
-
-    function nextQuestion() {
-        currentQuestion++;
-        if (currentQuestion < questions.length) {
-            showQuestion();
-        } else {
-            showResult();
-        }
-    }
-
-    function showResult() {
-        document.getElementById("question").style.display = "none";
-        document.getElementById("answers").style.display = "none";
-        document.getElementById("next-btn").style.display = "none";
-        document.getElementById("feedback").style.display = "none";
-
-        document.getElementById("result").textContent =
-            `Du hast ${score} von ${questions.length} Fragen richtig beantwortet.`;
-
-        document.getElementById("question-image").style.display = "none";
-
-    }
-
-    showQuestion();
 
 
 </script>
