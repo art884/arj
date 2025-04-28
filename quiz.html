@@ -36,6 +36,7 @@
         <div class="quiz-container center-flex">
              <h2 id="question">Frage lädt...</h2>
              <img id="question-image" class="bilderrahmen" />
+             <div id="
              <ul id="answers"></ul>
              <p id="feedback"></p>
              <button id="next-btn" onclick="nextQuestion()" style="display:none;">Nächste Frage</button>
@@ -1053,7 +1054,6 @@ const questions = [
     {
         question: "Was für ein antisemitisches Merkmal ist in diesem Bild erkennbar?",
         image: "gefangnahme_christi.jpeg",
-        caption: "Gefangennahme Christi (1501), Hans Holbein",
         answers: [
             { text: "Ein Judenhut", correct: true },
             { text: "Eine Judensau", correct: false },
@@ -1064,7 +1064,6 @@ const questions = [
     {
         question: "Was ist an dieser Abbildung antisemitisch?",
         image: "bart.jpg",
-        caption: "Abbildung im Buch, Dark mirror : the medieval origins of anti-Jewish iconography",
         answers: [
             { text: "Die Nase der Frau", correct: false },
             { text: "Das Nase des Mannes", correct: true },
@@ -1074,7 +1073,6 @@ const questions = [
     {
         question: "Wer ist die Frau, die mit dem Schwert durchbohrt wird?",
         image: "synagoga.png",
-        caption: "Im Fresko vom Lebenden Kreuz (1470-1475), Thomas von Villach",
         answers: [
             { text: "Efa", correct: false },
             { text: "Ecclesia", correct: false },
@@ -1103,12 +1101,8 @@ function showQuestion() {
     if (q.image) {
         img.src = q.image;
         img.style.display = "block";
-
-        caption.style.display = "block";
-        caption.textContent = q.caption || "Keine Caption verfügbar";
     } else {
         img.style.display = "none";
-        caption.style.display = "none";
     }
 
     const answerList = document.getElementById("answers");
